@@ -7,6 +7,8 @@ def mask_card_number(number):
     formatted_number = f"{card_number[:4]} {card_number[4:6]}** **** {card_number[-4:]}"
     result = f"{text} {formatted_number}"
     return result
+
+
 def mask_account_number(number):
     return "**" + number[-4:]
 
@@ -46,7 +48,7 @@ def get_latest_completed_transactions(data, n_transactions=5):
     return completed_transactions[:n_transactions]
 
 
-filename = "operation.json"
+filename = "/home/sasha/PycharmProjects/kursov3/utils/operation.json"
 
 with open(filename, 'r') as file:
     data = json.load(file)
